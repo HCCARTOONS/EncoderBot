@@ -21,15 +21,16 @@ video_mimetype = [
 
 @app.on_message(filters.incoming & filters.command(['start', 'help']))
 def help_message(app, message):
-    message.reply_text(f"Hey {message.from_user.mention()} 🐭\nYou Know What I Can Do Right ?", quote=True)
+    message.reply_text(f"Hey {message.from_user.mention()} This is Not Public BOT. Ask Permission From My Master @HC_CARTOONS", quote=True)
 
 @app.on_message(filters.user(sudo_users) & filters.incoming & (filters.video | filters.document))
 def encode_video(app, message):
+    message
     if message.document:
       if not message.document.mime_type in video_mimetype:
         message.reply_text("Invalid Video Format !\nMake Sure Its a Supported Video File 🐭", quote=True)
         return
-    message.reply_text("Added To Queue 🐭", quote=True) 
+    message.reply_text("Added To Queue Prem Sir 🙇🏼‍♂️", quote=True) 
     data.append(message)
     if len(data) == 1:
       add_task(message)
