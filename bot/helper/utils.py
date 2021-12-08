@@ -10,20 +10,20 @@ def on_task_complete():
 
 def add_task(message: Message):
     try:
-      msg = message.reply_text("Downloading 🐭", quote=True)
+      msg = message.reply_text("Downloading Prem Sir 🙇🏼‍♂️", quote=True)
       filepath = message.download(file_name=download_dir)
-      msg.edit("Encoding 🐭")
+      msg.edit("Encoding Prem Sir 🙇🏼‍♂️")
       new_file = encode(filepath)
       if new_file:
         msg.edit("Video Encoded Successfully\nGetting Metadata 🐭")
         duration = get_duration(new_file)
         thumb = get_thumbnail(new_file, download_dir, duration / 4)
         width, height = get_width_height(new_file)
-        msg.edit("Uploading 🐭")
+        msg.edit("Uploading Prem Sir 🙇🏼‍♂️")
         message.reply_video(new_file, quote=True, supports_streaming=True, thumb=thumb, duration=duration, width=width, height=height)
         os.remove(new_file)
         os.remove(thumb)
-        msg.edit("Video Successfully Encoded to x265 🐭")
+        msg.edit("My Master (Prem) Video Successfully Encoded to x265 🐭")
       else:
         msg.edit("Something Went Wrong While Encoding :(\nTry Again Later 🐭")
         os.remove(filepath)
